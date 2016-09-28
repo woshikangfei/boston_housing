@@ -11931,7 +11931,11 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:'RM' feature will make the 'MEDV' increase ,and 'LSTAT' feature does not necessarily make the 'MEDV' increase, and 'PTRATIO' maybe make the 'MEDV' increase </strong></p>
+<p>**回答:
+'RM' feature will make the 'MEDV' increase ,because Price average and maximum deviation because the room is very large, the average room number will affect the price of the house.</p>
+<p>and 'LSTAT' feature does not necessarily make the 'MEDV' increase, because Minimum price: $105,000.00 is very low，it may price low.</p>
+<p>and 'PTRATIO' maybe make the 'MEDV' No effects on prices，because Mean price and Median price  amount  the same</p>
+<p>**</p>
 
 </div>
 </div>
@@ -13243,7 +13247,8 @@ ZtYG/oEMMzMzMzOzNvBgy8zMzMzMrA082DIzMzMzM2sDD7bMzMzMzMzawIMtMzMzMzOzNvg/6y/a
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>答案:Above, max_depth is 1,3,6 and 10, with the increase of number of training curve scores began to decline, at the time of training depth reached 3, best of the model. If more training data, not necessarily can improve performance of the model. </strong></p>
+<p><strong>答案:
+Choose the third picture to discuss, the maximum depth of training for 6, with the increase of the number of training, training curve scores began to decline, the test curve also began to drop, if more training data, can effectively improve the performance of the model. Learning curve of the score will eventually converges to a specific value.</strong></p>
 
 </div>
 </div>
@@ -13722,7 +13727,10 @@ GNOuWOIzxhjTrljiM8YY065Y4jPGGNOu/D9WtmtCESdSZgAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>答案:When 1 training model to maximize the depth, the prediction is a very big variance, when to maximum depth of the model is trained, appeared a large deviation, the two lines with the increase of the depth of the training of a graphic gap away gradually, deviation is more and more big, if the model has enough data, but due to the complex enough to capture the basic relationship, will appear deviation (underfitting), high variance shows that model can predict the results generalize to extract the larger matrix of training samples. The training set is highly sensitive, also known as fitting (overfitting), usually, can use more data for training, in order to reduce the model to predict the results of variance and improve the precision. </strong></p>
+<p>**答案:
+When the model with maximum depth 1 training, the prediction is a very big bias. Because the data underfit prediction of is not very good, because it is too general. The predicted results only 0.4 points.</p>
+<p>When the model with maximum depth of 10 training, model predictions appear very big variance. Almost close to 1.0 for predicting training data score full marks, score is lower when verification test data.
+**</p>
 
 </div>
 </div>
@@ -13773,7 +13781,17 @@ GNOuWOIzxhjTrljiM8YY065Y4jPGGNOu/D9WtmtCESdSZgAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:GridSearchCV according to the given model, automatically you cross validation, by adjusting each parameter to track scores as a result, in fact, instead of the process of parameter search for loop process. </strong></p>
+<p>**回答:</p>
+<p>this algorithm input consists of:
+an estimator (regressor or classifier such as sklearn.svm.SVC());
+a parameter space;
+a method for searching or sampling candidates;
+a cross-validation scheme; and
+a score function.</p>
+<p>The GridSearchCV instance implements the usual estimator API: when “fitting” it on a dataset all the possible combinations of parameter values are evaluated and the best combination is retained.</p>
+<p>Algorithm of the final output after the combination of the optimal parameters.
+GridSearchCV according to the given model, automatically you cross validation, by adjusting each parameter to track scores as a result, 
+**</p>
 
 </div>
 </div>
@@ -13847,10 +13865,8 @@ GNOuWOIzxhjTrljiM8YY065Y4jPGGNOu/D9WtmtCESdSZgAAAABJRU5ErkJggg==
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">k_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-   
 
-    <span class="n">params</span> <span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">k_range</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
     
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
